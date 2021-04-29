@@ -15,6 +15,7 @@ func handleRequests() {
 	
 	_router.HandleFunc("/", controllers.HomePage)
 	_router.HandleFunc("/article", controllers.CreateArticle).Methods("POST")
+	_router.HandleFunc("/article", controllers.GetArticle).Methods("GET")
 
 
 	fmt.Println("http://localhost:10000/")
@@ -23,6 +24,5 @@ func handleRequests() {
 }
 
 func main() {
-	DB()
 	handleRequests()
 }
